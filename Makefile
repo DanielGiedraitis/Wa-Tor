@@ -1,14 +1,16 @@
-# Joseph Kehoe
-# This is very basic. It is just here to show you a simple sfml graphics display that you can use.
-# I expect better from you!
+# Author: Daniel Giedraitis (C00260331)
+# Date Created: 04/11/2023
+# Purpose: It contains rules that tell the system how to compile the code and produce a working executable called wator.
+# GitHub URL: https://github.com/DanielGiedraitis/Wa-Tor
+# Licence: GPL-3.0
 
-CXX = g++
-CPPFILES= test.cpp
+CXX = g++ -fopenmp
+CPPFILES= wator.cpp
 CPPFLAGS= -Wall
-LDFLAGS = -lsfml-graphics -lsfml-window -lsfml-system -lgomp
-EXE= testApp
+LDFLAGS = -lsfml-graphics -lsfml-window -lsfml-system -lgomp -fopenmp
+EXE= wator
 
-SRCS=test.cpp
+SRCS=wator.cpp
 OBJS=$(subst .cpp,.o,$(SRCS))
 
 #This rule says that each .o file depends on a .cpp file of the same name

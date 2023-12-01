@@ -2,7 +2,7 @@
 
 ---
 
-Welcome to my Wa-Tor Project folder for my Concurrent Development module.
+Welcome to my [Wa-Tor](https://en.wikipedia.org/wiki/Wa-Tor) Project folder for my Concurrent Development module.
 
 ## Plot Min durations for each thread count:
 A bar plot using Matplotlib to display the performance metrics of a parallelized implementation of the "Wa-Tor" simulation with different thread counts. It showcases the minimum duration achieved for different thread counts in executing the simulation.
@@ -55,6 +55,11 @@ The purpose of this error line plot is to visually represent both the average (m
 
 ---
 
+## List of Files and Contents
+- **wator.cpp -** C++11 file demonstrating an implementation of the [Wa-Tor](https://en.wikipedia.org/wiki/Wa-Tor) Simulation.
+- **Makefile -** This is the project file. It contains rules that tell the system how to compile the code and produce a working executable called wator.
+- **README -** Contains Lab 5 information, installation instructions, compilation, and execution guidelines.
+
 ## How to install project
 To set up this project on your system, follow these steps:
 
@@ -70,7 +75,6 @@ To set up this project on your system, follow these steps:
         
     - **Run the Executables:**
         - To execute the generated programs, use the shell command `./wator`
-
 
 ## Repository
 [GitHub Repository](https://github.com/DanielGiedraitis/Wa-Tor)

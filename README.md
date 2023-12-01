@@ -26,7 +26,7 @@ By visualizing the maximum durations across different thread counts, this graph 
 
 ---
 
-## Plot Avg durations for each thread count:
+## Plot Average durations for each thread count:
 This bar plot using Matplotlib, specifically shocases the average durations achieved when running the "Wa-Tor" simulation with different thread counts.
 
 Similar to the previous plots, this graph visualizes the average duration (in milliseconds) for each thread count configuration. Each bar represents the average time taken by the simulation to complete its execution for a specific thread count. The x-axis indicates the number of threads utilized, while the y-axis displays the duration in milliseconds.
@@ -47,7 +47,7 @@ The purpose of this graph is to offer a comprehensive comparison of the minimum,
 ---
 
 ## Mean durations and standard deviations for each thread count
-Using Matplotlib to generate an error line plot, showcasing the mean durations and the variability (standard deviations) in durations observed for the "Wa-Tor" simulation across different thread counts.
+I utilized Matplotlib to generate an error line plot, showcasing the mean durations and the variability (standard deviations) in durations observed for the "Wa-Tor" simulation across different thread counts.
 
 The purpose of this error line plot is to visually represent both the average (mean) durations and the variability (standard deviations) associated with these durations across different thread counts. It allows for an understanding of the spread or dispersion of duration values around the mean for each thread count configuration.
 

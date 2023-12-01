@@ -37,7 +37,7 @@ The primary purpose of this graph is to offer insight into the average performan
 
 ---
 
-## A subplot for Min, Max, and Avg durations in one graph:
+## A subplot for Min, Max, and Average durations in one graph:
 A bar plot using Matplotlib to showcase the minimum, maximum, and average durations achieved during the execution of the "Wa-Tor" simulation with varying thread counts.
 
 The purpose of this graph is to offer a comprehensive comparison of the minimum, maximum, and average durations for different thread counts in a single visualization. 

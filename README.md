@@ -58,7 +58,7 @@ The purpose of this error line plot is to visually represent both the average (m
 ## List of Files and Contents
 - **wator.cpp -** C++11 file demonstrating an implementation of the [Wa-Tor](https://en.wikipedia.org/wiki/Wa-Tor) Simulation.
 - **Makefile -** This is the project file. It contains rules that tell the system how to compile the code and produce a working executable called wator.
-- **README -** Contains Lab 5 information, installation instructions, compilation, and execution guidelines.
+- **README -** Contains WaTor information, installation instructions, compilation, and execution guidelines.
 
 ## How to install project
 To set up this project on your system, follow these steps:

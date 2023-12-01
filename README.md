@@ -37,6 +37,24 @@ The primary purpose of this graph is to offer insight into the average performan
 
 ---
 
+## A subplot for Min, Max, and Avg durations in one graph:
+A bar plot using Matplotlib to showcase the minimum, maximum, and average durations achieved during the execution of the "Wa-Tor" simulation with varying thread counts.
+
+The purpose of this graph is to offer a comprehensive comparison of the minimum, maximum, and average durations for different thread counts in a single visualization. 
+
+![minMaxAvg](https://github.com/DanielGiedraitis/Wa-Tor/assets/91562130/a9e5a2ae-544d-4473-a90d-10ecc1027552)
+
+---
+
+## Mean durations and standard deviations for each thread count
+Using Matplotlib to generate an error line plot, showcasing the mean durations and the variability (standard deviations) in durations observed for the "Wa-Tor" simulation across different thread counts.
+
+The purpose of this error line plot is to visually represent both the average (mean) durations and the variability (standard deviations) associated with these durations across different thread counts. It allows for an understanding of the spread or dispersion of duration values around the mean for each thread count configuration.
+
+![ErrorLine](https://github.com/DanielGiedraitis/Wa-Tor/assets/91562130/e7d17b92-0ba0-4439-8754-de89b04edcb1)
+
+---
+
 ## How to install project
 To set up this project on your system, follow these steps:
 
@@ -47,8 +65,6 @@ To set up this project on your system, follow these steps:
 
     - **Build the Executables:**
         - Run `make` or `make build` to generate the main executables.
-        - For `wator`:
-            - Execute `make wator`.
         - To create a debug version with symbols:
             - Use `make debug` to build the executables with debug symbols.
         

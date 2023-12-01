@@ -9,7 +9,7 @@ A bar plot using Matplotlib to display the performance metrics of a parallelized
 
 The purpose of the graph is to visually represent the minimum duration (in milliseconds) taken by the simulation to complete for different thread counts. Each bar represents the minimum duration obtained for a specific thread count. The x-axis denotes the number of threads used, while the y-axis represents the duration in milliseconds.
 
-The graph allows for a comparative analysis of the performance of the simulation concerning different thread counts. Lower durations imply better performance or faster execution times. Thus, this graph helps in assessing the impact of parallelization (using different thread counts) on the simulation's runtime, aiming to determine the most efficient configuration for running the "Wa-Tor" simulation.
+The graph provides for a comparison of the simulation's performance with different thread counts. Lower durations imply better performance or faster execution times. Thus, this graph helps in assessing the impact of parallelization (using different thread counts) on the simulation's runtime, aiming to determine the most efficient configuration for running the "Wa-Tor" simulation.
 
 ![minPlot](https://github.com/DanielGiedraitis/Wa-Tor/assets/91562130/9dd991f8-6d12-4799-b53d-382e14be6127)
 

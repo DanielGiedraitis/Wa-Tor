@@ -31,9 +31,9 @@ struct Tile;
 
 // Enumeration defining different types of tiles in the simulation
 enum TileType { 
-  Ocean, 
-  Fish, 
-  Shark 
+  Ocean, // Blue 
+  Fish, // Green 
+  Shark // Red
 };
 
 // Structure representing a tile in the simulation

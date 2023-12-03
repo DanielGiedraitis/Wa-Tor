@@ -1,0 +1,94 @@
+\chapter{Concurrent Development Wa-\/\+Tor Project}
+\hypertarget{index}{}\label{index}\index{Concurrent Development Wa-\/Tor Project@{Concurrent Development Wa-\/Tor Project}}
+\label{index_md__r_e_a_d_m_e}%
+\Hypertarget{index_md__r_e_a_d_m_e}%
+ \DoxyHorRuler{0}
+
+
+Welcome to my \href{https://en.wikipedia.org/wiki/Wa-Tor}{\texttt{ Wa-\/\+Tor}} Project folder for my Concurrent Development module.\hypertarget{index_autotoc_md2}{}\doxysection{\texorpdfstring{Plot Min durations for each thread count\+:}{Plot Min durations for each thread count:}}\label{index_autotoc_md2}
+A bar plot using Matplotlib to display the performance metrics of a parallelized implementation of the "{}\+Wa-\/\+Tor"{} simulation with different thread counts. It showcases the minimum duration achieved for different thread counts in executing the simulation.
+
+The purpose of the graph is to visually represent the minimum duration (in milliseconds) taken by the simulation to complete for different thread counts. Each bar represents the minimum duration obtained for a specific thread count. The x-\/axis denotes the number of threads used, while the y-\/axis represents the duration in milliseconds.
+
+The graph provides for a comparison of the simulation\textquotesingle{}s performance with different thread counts. Lower durations imply better performance or faster execution times. Thus, this graph helps in assessing the impact of parallelization (using different thread counts) on the simulation\textquotesingle{}s runtime, aiming to determine the most efficient configuration for running the "{}\+Wa-\/\+Tor"{} simulation.
+
+
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md4}{}\doxysection{\texorpdfstring{Plot Max durations for each thread count\+:}{Plot Max durations for each thread count:}}\label{index_autotoc_md4}
+This bar plot using Matplotlib visualizes the maximum durations achieved during the execution of the "{}\+Wa-\/\+Tor"{} simulation with varying thread counts.
+
+Similar to the previous plot, here each bar represents the maximum duration (in milliseconds) obtained for a specific thread count configuration. The x-\/axis displays the number of threads used, while the y-\/axis represents the duration in milliseconds. The purpose of this graph is different from the plot displaying minimum durations. It aims to illustrate the maximum time taken for the simulation to complete with different thread counts. Higher durations imply that the simulation took longer to finish its execution.
+
+By visualizing the maximum durations across different thread counts, this graph helps identify scenarios where the simulation might experience spikes or higher execution times. These peaks can be crucial for assessing the simulation\textquotesingle{}s performance under varying computational loads and optimizing the configuration for more consistent or efficient execution.
+
+
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md6}{}\doxysection{\texorpdfstring{Plot Average durations for each thread count\+:}{Plot Average durations for each thread count:}}\label{index_autotoc_md6}
+This bar plot using Matplotlib, specifically showcases the average durations achieved when running the "{}\+Wa-\/\+Tor"{} simulation with different thread counts.
+
+Similar to the previous plots, this graph visualizes the average duration (in milliseconds) for each thread count configuration. Each bar represents the average time taken by the simulation to complete its execution for a specific thread count. The x-\/axis indicates the number of threads utilized, while the y-\/axis displays the duration in milliseconds.
+
+The primary purpose of this graph is to offer insight into the average performance of the simulation under different threading configurations. Unlike the minimum and maximum duration plots, which respectively represent the best and worst case scenarios in terms of execution time, the average duration plot provides a more balanced view of the simulation\textquotesingle{}s runtime performance across various thread counts.
+
+
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md8}{}\doxysection{\texorpdfstring{A subplot for Min, Max, and Average durations in one graph\+:}{A subplot for Min, Max, and Average durations in one graph:}}\label{index_autotoc_md8}
+A bar plot using Matplotlib to showcase the minimum, maximum, and average durations achieved during the execution of the "{}\+Wa-\/\+Tor"{} simulation with varying thread counts.
+
+The purpose of this graph is to offer a comprehensive comparison of the minimum, maximum, and average durations for different thread counts in a single visualization.
+
+
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md10}{}\doxysection{\texorpdfstring{Mean durations and standard deviations for each thread count}{Mean durations and standard deviations for each thread count}}\label{index_autotoc_md10}
+I utilized Matplotlib to generate an error line plot, showcasing the mean durations and the variability (standard deviations) in durations observed for the "{}\+Wa-\/\+Tor"{} simulation across different thread counts.
+
+The purpose of this error line plot is to visually represent both the average (mean) durations and the variability (standard deviations) associated with these durations across different thread counts. It allows for an understanding of the spread or dispersion of duration values around the mean for each thread count configuration.
+
+
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md12}{}\doxysection{\texorpdfstring{List of Files and Contents}{List of Files and Contents}}\label{index_autotoc_md12}
+
+\begin{DoxyItemize}
+\item {\bfseries{\doxylink{wator_8cpp}{wator.\+cpp} -\/}} C++11 file demonstrating an implementation of the \href{https://en.wikipedia.org/wiki/Wa-Tor}{\texttt{ Wa-\/\+Tor}} Simulation.
+\item {\bfseries{wator.\+o -\/}} Object file of the \doxylink{wator_8cpp}{wator.\+cpp} file.
+\item {\bfseries{wator -\/}} Executable file for the \doxylink{wator_8cpp}{wator.\+cpp} file.
+\item {\bfseries{Makefile -\/}} This is the project file. It contains rules that tell the system how to compile the code and produce a working executable called wator.
+\item {\bfseries{README -\/}} Contains Wa\+Tor information, installation instructions, compilation, and execution guidelines.
+\end{DoxyItemize}\hypertarget{index_autotoc_md13}{}\doxysection{\texorpdfstring{How to install project}{How to install project}}\label{index_autotoc_md13}
+To set up this project on your system, follow these steps\+:
+
+
+\begin{DoxyEnumerate}
+\item Ensure that GCC, SFML, Make, and Open\+MP are installed on your machine.
+\item Clone this repository to your local environment.
+\item Open your terminal and navigate to the project directory.
+\item Once in the folder, use the following commands\+:
+\begin{DoxyItemize}
+\item {\bfseries{Build the Executables\+:}}
+\begin{DoxyItemize}
+\item Run {\ttfamily make} or {\ttfamily make build} to generate the main executables.
+\item To create a debug version with symbols\+:
+\begin{DoxyItemize}
+\item Use {\ttfamily make debug} to build the executables with debug symbols.
+\end{DoxyItemize}
+\end{DoxyItemize}
+\item {\bfseries{Run the Executables\+:}}
+\begin{DoxyItemize}
+\item To execute the generated programs, use the shell command {\ttfamily ./wator}
+\end{DoxyItemize}
+\end{DoxyItemize}
+\end{DoxyEnumerate}\hypertarget{index_autotoc_md14}{}\doxysection{\texorpdfstring{Repository}{Repository}}\label{index_autotoc_md14}
+\href{https://github.com/DanielGiedraitis/Wa-Tor}{\texttt{ Git\+Hub Repository}}\hypertarget{index_autotoc_md15}{}\doxysection{\texorpdfstring{License}{License}}\label{index_autotoc_md15}
+\href{https://www.gnu.org/licenses/gpl-3.0.en.html}{\texttt{ GNU General Public License v3.\+0}}\hypertarget{index_autotoc_md16}{}\doxysection{\texorpdfstring{Author}{Author}}\label{index_autotoc_md16}
+
+\begin{DoxyItemize}
+\item {\bfseries{Name\+:}} Daniel Giedraitis
+\item {\bfseries{Email\+:}} \href{mailto:daniel.giedraitis@gmail.com}{\texttt{ daniel.\+giedraitis@gmail.\+com}}
+\item {\bfseries{Other Projects\+:}} \href{https://github.com/DanielGiedraitis}{\texttt{ https\+://github.\+com/\+Daniel\+Giedraitis}}
+\item {\bfseries{Linked\+In\+:}} \href{https://www.linkedin.com/in/daniel-giedraitis}{\texttt{ https\+://www.\+linkedin.\+com/in/daniel-\/giedraitis}} 
+\end{DoxyItemize}

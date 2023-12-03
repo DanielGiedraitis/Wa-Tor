@@ -1,0 +1,497 @@
+\doxysection{wator.\+cpp File Reference}
+\hypertarget{wator_8cpp}{}\label{wator_8cpp}\index{wator.cpp@{wator.cpp}}
+
+
+A simulation of the Wa-\/\+Tor world using SFML library for graphics and Open\+MP for parallel programming.  
+
+
+{\ttfamily \#include $<$SFML/\+Graphics.\+hpp$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$omp.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_tile}{Tile}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{wator_8cpp_ac9e486ec80ccfdb28a4f4837d419c9f1}{Tile\+Type}} \{ \mbox{\hyperlink{wator_8cpp_ac9e486ec80ccfdb28a4f4837d419c9f1acdec37c71fb10008fe070f0c596d7acd}{Ocean}}
+, \mbox{\hyperlink{wator_8cpp_ac9e486ec80ccfdb28a4f4837d419c9f1a324f858b35b921243d6e8ad642c9657e}{Fish}}
+, \mbox{\hyperlink{wator_8cpp_ac9e486ec80ccfdb28a4f4837d419c9f1a946250cd31133a26867db4c8756549fc}{Shark}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Render\+Window \mbox{\hyperlink{wator_8cpp_a9dfe94873f2f48614918431af8426f79}{window}} (sf\+::\+Video\+Mode(\mbox{\hyperlink{wator_8cpp_ac7ab5ee55dcd44ef05c33e2c710137f3}{Window\+XSize}}, \mbox{\hyperlink{wator_8cpp_accf8a62be256e8e1d7f915d79e218e6f}{Window\+YSize}}), "{}SFML Wa-\/Tor world"{})
+\item 
+sf\+::\+Color \mbox{\hyperlink{wator_8cpp_a67defb00c15418ae098018ca50466eff}{get\+Color}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Get the color of a tile at given coordinates. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{wator_8cpp_a04c7ac655fcbf9d0e9ceb73c2226cd05}{has\+Moved}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Check if the creature at given coordinates has moved. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{wator_8cpp_a18faf1ad0560f5706dd8e913c464a8b7}{set\+Ocean}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Set the tile at the given coordinates to Ocean type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{wator_8cpp_a8fa730df063d32510e98a525261fe55b}{set\+Fish}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Set the tile at the given coordinates to Fish type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{wator_8cpp_ae62e5b8d47f08def059ade12e6a95fc5}{set\+Shark}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Set the tile at the given coordinates to Shark type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_tile}{Tile}} \mbox{\hyperlink{wator_8cpp_a15abf9b409277a2d92649543375feaf3}{get\+Tile}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Get the tile at the given coordinates. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{wator_8cpp_a3bb617c17aef658d3113651235eafaf1}{set\+Tile}} (int x, int y, \mbox{\hyperlink{struct_tile}{Tile}} tile)
+\begin{DoxyCompactList}\small\item\em Set the tile at the given coordinates. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{wator_8cpp_a0d2e75840525be3b16c62b0892fe3757}{set\+Neighbours}} (int x, int y, \mbox{\hyperlink{struct_tile}{Tile}} list\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Set the neighboring tiles around the given coordinates. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{wator_8cpp_a80b3619b5907b743b80f57accaca35d7}{move\+Fish}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Move the fish creature at the given coordinates. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{wator_8cpp_a1790e705b7c7c3da9c47c8d0fdd71a79}{move\+Shark}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Move the shark creature at the given coordinates. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{wator_8cpp_a73c53a1d96697e8bebe152d402decf83}{poll\+Events}} ()
+\begin{DoxyCompactList}\small\item\em Poll and handle events in the window. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{wator_8cpp_a56c5cf8a568cff737ff95520cbe6b405}{draw}} ()
+\begin{DoxyCompactList}\small\item\em Draw the current state of the simulation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{wator_8cpp_a9b9f2f7c364e738e92ea055a54d9b6a4}{initialize\+World}} ()
+\begin{DoxyCompactList}\small\item\em Initialize the world by setting up tiles, creatures, and the display. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{wator_8cpp_a604a4738922ca0d1472d143de6388613}{move\+Creatures}} ()
+\begin{DoxyCompactList}\small\item\em Move creatures (Fish and Shark) in the simulation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{wator_8cpp_a6ecc9559b979dc1adcf49887f10c500e}{run\+Simulation}} ()
+\begin{DoxyCompactList}\small\item\em Run the simulation with varying thread counts. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{wator_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em Main function to run the simulation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{wator_8cpp_ae85067b350721613f2a486183b2cac96}{max\+Duration}} = 100
+\item 
+const int \mbox{\hyperlink{wator_8cpp_a9a2e1134ead3b7c016e575a841fc539b}{max\+Threads}} = 8
+\item 
+const int \mbox{\hyperlink{wator_8cpp_a86169e4571d0be14f554b3deb8a7d40b}{fish\+Breed}} = 1
+\item 
+const int \mbox{\hyperlink{wator_8cpp_acfa1ffb83cff16315eb121d989884b43}{shark\+Breed}} = 6
+\item 
+const int \mbox{\hyperlink{wator_8cpp_af5cec69489233d6a45dff3d6045c784e}{energy\+Gain}} = 1
+\item 
+const int \mbox{\hyperlink{wator_8cpp_a67566e510211a1016413cd84bdf23969}{starve}} = 2
+\item 
+const int \mbox{\hyperlink{wator_8cpp_aea75dd10e09d2d3eb69ed47e48cf81dc}{xdim}} = 800
+\item 
+const int \mbox{\hyperlink{wator_8cpp_ae4edf59451b5b93478325e260849c564}{ydim}} = 800
+\item 
+const int \mbox{\hyperlink{wator_8cpp_ac7ab5ee55dcd44ef05c33e2c710137f3}{Window\+XSize}} = 1000
+\item 
+const int \mbox{\hyperlink{wator_8cpp_accf8a62be256e8e1d7f915d79e218e6f}{Window\+YSize}} = 800
+\item 
+const int \mbox{\hyperlink{wator_8cpp_a527273df9431813326e9ff8e2784bb8a}{tile\+XSize}} = \mbox{\hyperlink{wator_8cpp_ac7ab5ee55dcd44ef05c33e2c710137f3}{Window\+XSize}} / \mbox{\hyperlink{wator_8cpp_aea75dd10e09d2d3eb69ed47e48cf81dc}{xdim}}
+\item 
+const int \mbox{\hyperlink{wator_8cpp_a34a2e5c6c2d2e1e2e3baf4bc5e0e0c77}{tile\+YSize}} = \mbox{\hyperlink{wator_8cpp_accf8a62be256e8e1d7f915d79e218e6f}{Window\+YSize}} / \mbox{\hyperlink{wator_8cpp_ae4edf59451b5b93478325e260849c564}{ydim}}
+\item 
+int \mbox{\hyperlink{wator_8cpp_aa84c6f4ba6f33ec1a17b3723fc593290}{num\+Threads}} = 0
+\item 
+sf\+::\+Rectangle\+Shape \mbox{\hyperlink{wator_8cpp_abfd9128c68e3e1eed5f0f8e5d625f1e4}{display}} \mbox{[}\mbox{\hyperlink{wator_8cpp_aea75dd10e09d2d3eb69ed47e48cf81dc}{xdim}}\mbox{]}\mbox{[}\mbox{\hyperlink{wator_8cpp_ae4edf59451b5b93478325e260849c564}{ydim}}\mbox{]}
+\item 
+\mbox{\hyperlink{struct_tile}{Tile}} \mbox{\hyperlink{wator_8cpp_a51065be64dea192cc1697e42303f3f08}{tiles}} \mbox{[}\mbox{\hyperlink{wator_8cpp_aea75dd10e09d2d3eb69ed47e48cf81dc}{xdim}}\mbox{]}\mbox{[}\mbox{\hyperlink{wator_8cpp_ae4edf59451b5b93478325e260849c564}{ydim}}\mbox{]}
+\item 
+drand48\+\_\+data \mbox{\hyperlink{wator_8cpp_ae2a11b33a57375ee739255f319b58513}{Decision\+Data}} \mbox{[}\mbox{\hyperlink{wator_8cpp_a9a2e1134ead3b7c016e575a841fc539b}{max\+Threads}}\mbox{]}
+\item 
+int \mbox{\hyperlink{wator_8cpp_a4f8f360ddc32a23b239cae74e060303e}{durations}} \mbox{[}\mbox{\hyperlink{wator_8cpp_ae85067b350721613f2a486183b2cac96}{max\+Duration}}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A simulation of the Wa-\/\+Tor world using SFML library for graphics and Open\+MP for parallel programming. 
+
+\begin{DoxyAuthor}{Author}
+Daniel Giedraitis (C00260331) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+04/11/2023 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+GPL-\/3.\+0 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{wator_8cpp_ac9e486ec80ccfdb28a4f4837d419c9f1}\label{wator_8cpp_ac9e486ec80ccfdb28a4f4837d419c9f1} 
+\index{wator.cpp@{wator.cpp}!TileType@{TileType}}
+\index{TileType@{TileType}!wator.cpp@{wator.cpp}}
+\doxysubsubsection{\texorpdfstring{TileType}{TileType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{wator_8cpp_ac9e486ec80ccfdb28a4f4837d419c9f1}{Tile\+Type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Ocean@{Ocean}!wator.cpp@{wator.cpp}}\index{wator.cpp@{wator.cpp}!Ocean@{Ocean}}}\Hypertarget{wator_8cpp_ac9e486ec80ccfdb28a4f4837d419c9f1acdec37c71fb10008fe070f0c596d7acd}\label{wator_8cpp_ac9e486ec80ccfdb28a4f4837d419c9f1acdec37c71fb10008fe070f0c596d7acd} 
+Ocean&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Fish@{Fish}!wator.cpp@{wator.cpp}}\index{wator.cpp@{wator.cpp}!Fish@{Fish}}}\Hypertarget{wator_8cpp_ac9e486ec80ccfdb28a4f4837d419c9f1a324f858b35b921243d6e8ad642c9657e}\label{wator_8cpp_ac9e486ec80ccfdb28a4f4837d419c9f1a324f858b35b921243d6e8ad642c9657e} 
+Fish&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Shark@{Shark}!wator.cpp@{wator.cpp}}\index{wator.cpp@{wator.cpp}!Shark@{Shark}}}\Hypertarget{wator_8cpp_ac9e486ec80ccfdb28a4f4837d419c9f1a946250cd31133a26867db4c8756549fc}\label{wator_8cpp_ac9e486ec80ccfdb28a4f4837d419c9f1a946250cd31133a26867db4c8756549fc} 
+Shark&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{wator_8cpp_a56c5cf8a568cff737ff95520cbe6b405}\label{wator_8cpp_a56c5cf8a568cff737ff95520cbe6b405} 
+\index{wator.cpp@{wator.cpp}!draw@{draw}}
+\index{draw@{draw}!wator.cpp@{wator.cpp}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Draw the current state of the simulation. 
+
+\Hypertarget{wator_8cpp_a67defb00c15418ae098018ca50466eff}\label{wator_8cpp_a67defb00c15418ae098018ca50466eff} 
+\index{wator.cpp@{wator.cpp}!getColor@{getColor}}
+\index{getColor@{getColor}!wator.cpp@{wator.cpp}}
+\doxysubsubsection{\texorpdfstring{getColor()}{getColor()}}
+{\footnotesize\ttfamily sf\+::\+Color get\+Color (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Get the color of a tile at given coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X-\/coordinate of the tile. \\
+\hline
+{\em y} & Y-\/coordinate of the tile. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Color of the tile. 
+\end{DoxyReturn}
+\Hypertarget{wator_8cpp_a15abf9b409277a2d92649543375feaf3}\label{wator_8cpp_a15abf9b409277a2d92649543375feaf3} 
+\index{wator.cpp@{wator.cpp}!getTile@{getTile}}
+\index{getTile@{getTile}!wator.cpp@{wator.cpp}}
+\doxysubsubsection{\texorpdfstring{getTile()}{getTile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_tile}{Tile}} get\+Tile (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Get the tile at the given coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X-\/coordinate of the tile. \\
+\hline
+{\em y} & Y-\/coordinate of the tile. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The tile at the specified coordinates. 
+\end{DoxyReturn}
+\Hypertarget{wator_8cpp_a04c7ac655fcbf9d0e9ceb73c2226cd05}\label{wator_8cpp_a04c7ac655fcbf9d0e9ceb73c2226cd05} 
+\index{wator.cpp@{wator.cpp}!hasMoved@{hasMoved}}
+\index{hasMoved@{hasMoved}!wator.cpp@{wator.cpp}}
+\doxysubsubsection{\texorpdfstring{hasMoved()}{hasMoved()}}
+{\footnotesize\ttfamily bool has\+Moved (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Check if the creature at given coordinates has moved. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X-\/coordinate of the tile. \\
+\hline
+{\em y} & Y-\/coordinate of the tile. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the creature has moved, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{wator_8cpp_a9b9f2f7c364e738e92ea055a54d9b6a4}\label{wator_8cpp_a9b9f2f7c364e738e92ea055a54d9b6a4} 
+\index{wator.cpp@{wator.cpp}!initializeWorld@{initializeWorld}}
+\index{initializeWorld@{initializeWorld}!wator.cpp@{wator.cpp}}
+\doxysubsubsection{\texorpdfstring{initializeWorld()}{initializeWorld()}}
+{\footnotesize\ttfamily void initialize\+World (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialize the world by setting up tiles, creatures, and the display. 
+
+\Hypertarget{wator_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{wator_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+\index{wator.cpp@{wator.cpp}!main@{main}}
+\index{main@{main}!wator.cpp@{wator.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Main function to run the simulation. 
+
+\begin{DoxyReturn}{Returns}
+Exit code. 
+\end{DoxyReturn}
+\Hypertarget{wator_8cpp_a604a4738922ca0d1472d143de6388613}\label{wator_8cpp_a604a4738922ca0d1472d143de6388613} 
+\index{wator.cpp@{wator.cpp}!moveCreatures@{moveCreatures}}
+\index{moveCreatures@{moveCreatures}!wator.cpp@{wator.cpp}}
+\doxysubsubsection{\texorpdfstring{moveCreatures()}{moveCreatures()}}
+{\footnotesize\ttfamily void move\+Creatures (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Move creatures (Fish and Shark) in the simulation. 
+
+\Hypertarget{wator_8cpp_a80b3619b5907b743b80f57accaca35d7}\label{wator_8cpp_a80b3619b5907b743b80f57accaca35d7} 
+\index{wator.cpp@{wator.cpp}!moveFish@{moveFish}}
+\index{moveFish@{moveFish}!wator.cpp@{wator.cpp}}
+\doxysubsubsection{\texorpdfstring{moveFish()}{moveFish()}}
+{\footnotesize\ttfamily void move\+Fish (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Move the fish creature at the given coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X-\/coordinate of the tile. \\
+\hline
+{\em y} & Y-\/coordinate of the tile. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{wator_8cpp_a1790e705b7c7c3da9c47c8d0fdd71a79}\label{wator_8cpp_a1790e705b7c7c3da9c47c8d0fdd71a79} 
+\index{wator.cpp@{wator.cpp}!moveShark@{moveShark}}
+\index{moveShark@{moveShark}!wator.cpp@{wator.cpp}}
+\doxysubsubsection{\texorpdfstring{moveShark()}{moveShark()}}
+{\footnotesize\ttfamily void move\+Shark (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Move the shark creature at the given coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X-\/coordinate of the tile. \\
+\hline
+{\em y} & Y-\/coordinate of the tile. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{wator_8cpp_a73c53a1d96697e8bebe152d402decf83}\label{wator_8cpp_a73c53a1d96697e8bebe152d402decf83} 
+\index{wator.cpp@{wator.cpp}!pollEvents@{pollEvents}}
+\index{pollEvents@{pollEvents}!wator.cpp@{wator.cpp}}
+\doxysubsubsection{\texorpdfstring{pollEvents()}{pollEvents()}}
+{\footnotesize\ttfamily void poll\+Events (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Poll and handle events in the window. 
+
+\Hypertarget{wator_8cpp_a6ecc9559b979dc1adcf49887f10c500e}\label{wator_8cpp_a6ecc9559b979dc1adcf49887f10c500e} 
+\index{wator.cpp@{wator.cpp}!runSimulation@{runSimulation}}
+\index{runSimulation@{runSimulation}!wator.cpp@{wator.cpp}}
+\doxysubsubsection{\texorpdfstring{runSimulation()}{runSimulation()}}
+{\footnotesize\ttfamily void run\+Simulation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Run the simulation with varying thread counts. 
+
+\Hypertarget{wator_8cpp_a8fa730df063d32510e98a525261fe55b}\label{wator_8cpp_a8fa730df063d32510e98a525261fe55b} 
+\index{wator.cpp@{wator.cpp}!setFish@{setFish}}
+\index{setFish@{setFish}!wator.cpp@{wator.cpp}}
+\doxysubsubsection{\texorpdfstring{setFish()}{setFish()}}
+{\footnotesize\ttfamily void set\+Fish (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Set the tile at the given coordinates to Fish type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X-\/coordinate of the tile. \\
+\hline
+{\em y} & Y-\/coordinate of the tile. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{wator_8cpp_a0d2e75840525be3b16c62b0892fe3757}\label{wator_8cpp_a0d2e75840525be3b16c62b0892fe3757} 
+\index{wator.cpp@{wator.cpp}!setNeighbours@{setNeighbours}}
+\index{setNeighbours@{setNeighbours}!wator.cpp@{wator.cpp}}
+\doxysubsubsection{\texorpdfstring{setNeighbours()}{setNeighbours()}}
+{\footnotesize\ttfamily void set\+Neighbours (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{\mbox{\hyperlink{struct_tile}{Tile}}}]{list\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Set the neighboring tiles around the given coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X-\/coordinate of the tile. \\
+\hline
+{\em y} & Y-\/coordinate of the tile. \\
+\hline
+{\em list} & Array to store neighboring tiles. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{wator_8cpp_a18faf1ad0560f5706dd8e913c464a8b7}\label{wator_8cpp_a18faf1ad0560f5706dd8e913c464a8b7} 
+\index{wator.cpp@{wator.cpp}!setOcean@{setOcean}}
+\index{setOcean@{setOcean}!wator.cpp@{wator.cpp}}
+\doxysubsubsection{\texorpdfstring{setOcean()}{setOcean()}}
+{\footnotesize\ttfamily void set\+Ocean (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Set the tile at the given coordinates to Ocean type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X-\/coordinate of the tile. \\
+\hline
+{\em y} & Y-\/coordinate of the tile. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{wator_8cpp_ae62e5b8d47f08def059ade12e6a95fc5}\label{wator_8cpp_ae62e5b8d47f08def059ade12e6a95fc5} 
+\index{wator.cpp@{wator.cpp}!setShark@{setShark}}
+\index{setShark@{setShark}!wator.cpp@{wator.cpp}}
+\doxysubsubsection{\texorpdfstring{setShark()}{setShark()}}
+{\footnotesize\ttfamily void set\+Shark (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Set the tile at the given coordinates to Shark type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X-\/coordinate of the tile. \\
+\hline
+{\em y} & Y-\/coordinate of the tile. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{wator_8cpp_a3bb617c17aef658d3113651235eafaf1}\label{wator_8cpp_a3bb617c17aef658d3113651235eafaf1} 
+\index{wator.cpp@{wator.cpp}!setTile@{setTile}}
+\index{setTile@{setTile}!wator.cpp@{wator.cpp}}
+\doxysubsubsection{\texorpdfstring{setTile()}{setTile()}}
+{\footnotesize\ttfamily void set\+Tile (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{\mbox{\hyperlink{struct_tile}{Tile}}}]{tile }\end{DoxyParamCaption})}
+
+
+
+Set the tile at the given coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X-\/coordinate of the tile. \\
+\hline
+{\em y} & Y-\/coordinate of the tile. \\
+\hline
+{\em tile} & \doxylink{struct_tile}{Tile} to set at the coordinates. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{wator_8cpp_a9dfe94873f2f48614918431af8426f79}\label{wator_8cpp_a9dfe94873f2f48614918431af8426f79} 
+\index{wator.cpp@{wator.cpp}!window@{window}}
+\index{window@{window}!wator.cpp@{wator.cpp}}
+\doxysubsubsection{\texorpdfstring{window()}{window()}}
+{\footnotesize\ttfamily sf\+::\+Render\+Window window (\begin{DoxyParamCaption}\item[{sf\+::\+Video\+Mode(\mbox{\hyperlink{wator_8cpp_ac7ab5ee55dcd44ef05c33e2c710137f3}{Window\+XSize}}, \mbox{\hyperlink{wator_8cpp_accf8a62be256e8e1d7f915d79e218e6f}{Window\+YSize}})}]{,  }\item[{"{}SFML Wa-\/Tor world"{}}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{wator_8cpp_ae2a11b33a57375ee739255f319b58513}\label{wator_8cpp_ae2a11b33a57375ee739255f319b58513} 
+\index{wator.cpp@{wator.cpp}!DecisionData@{DecisionData}}
+\index{DecisionData@{DecisionData}!wator.cpp@{wator.cpp}}
+\doxysubsubsection{\texorpdfstring{DecisionData}{DecisionData}}
+{\footnotesize\ttfamily drand48\+\_\+data Decision\+Data\mbox{[}\mbox{\hyperlink{wator_8cpp_a9a2e1134ead3b7c016e575a841fc539b}{max\+Threads}}\mbox{]}}
+
+\Hypertarget{wator_8cpp_abfd9128c68e3e1eed5f0f8e5d625f1e4}\label{wator_8cpp_abfd9128c68e3e1eed5f0f8e5d625f1e4} 
+\index{wator.cpp@{wator.cpp}!display@{display}}
+\index{display@{display}!wator.cpp@{wator.cpp}}
+\doxysubsubsection{\texorpdfstring{display}{display}}
+{\footnotesize\ttfamily sf\+::\+Rectangle\+Shape display\mbox{[}\mbox{\hyperlink{wator_8cpp_aea75dd10e09d2d3eb69ed47e48cf81dc}{xdim}}\mbox{]}\mbox{[}\mbox{\hyperlink{wator_8cpp_ae4edf59451b5b93478325e260849c564}{ydim}}\mbox{]}}
+
+\Hypertarget{wator_8cpp_a4f8f360ddc32a23b239cae74e060303e}\label{wator_8cpp_a4f8f360ddc32a23b239cae74e060303e} 
+\index{wator.cpp@{wator.cpp}!durations@{durations}}
+\index{durations@{durations}!wator.cpp@{wator.cpp}}
+\doxysubsubsection{\texorpdfstring{durations}{durations}}
+{\footnotesize\ttfamily int durations\mbox{[}\mbox{\hyperlink{wator_8cpp_ae85067b350721613f2a486183b2cac96}{max\+Duration}}\mbox{]}}
+
+\Hypertarget{wator_8cpp_af5cec69489233d6a45dff3d6045c784e}\label{wator_8cpp_af5cec69489233d6a45dff3d6045c784e} 
+\index{wator.cpp@{wator.cpp}!energyGain@{energyGain}}
+\index{energyGain@{energyGain}!wator.cpp@{wator.cpp}}
+\doxysubsubsection{\texorpdfstring{energyGain}{energyGain}}
+{\footnotesize\ttfamily const int energy\+Gain = 1}
+
+\Hypertarget{wator_8cpp_a86169e4571d0be14f554b3deb8a7d40b}\label{wator_8cpp_a86169e4571d0be14f554b3deb8a7d40b} 
+\index{wator.cpp@{wator.cpp}!fishBreed@{fishBreed}}
+\index{fishBreed@{fishBreed}!wator.cpp@{wator.cpp}}
+\doxysubsubsection{\texorpdfstring{fishBreed}{fishBreed}}
+{\footnotesize\ttfamily const int fish\+Breed = 1}
+
+\Hypertarget{wator_8cpp_ae85067b350721613f2a486183b2cac96}\label{wator_8cpp_ae85067b350721613f2a486183b2cac96} 
+\index{wator.cpp@{wator.cpp}!maxDuration@{maxDuration}}
+\index{maxDuration@{maxDuration}!wator.cpp@{wator.cpp}}
+\doxysubsubsection{\texorpdfstring{maxDuration}{maxDuration}}
+{\footnotesize\ttfamily const int max\+Duration = 100}
+
+\Hypertarget{wator_8cpp_a9a2e1134ead3b7c016e575a841fc539b}\label{wator_8cpp_a9a2e1134ead3b7c016e575a841fc539b} 
+\index{wator.cpp@{wator.cpp}!maxThreads@{maxThreads}}
+\index{maxThreads@{maxThreads}!wator.cpp@{wator.cpp}}
+\doxysubsubsection{\texorpdfstring{maxThreads}{maxThreads}}
+{\footnotesize\ttfamily const int max\+Threads = 8}
+
+\Hypertarget{wator_8cpp_aa84c6f4ba6f33ec1a17b3723fc593290}\label{wator_8cpp_aa84c6f4ba6f33ec1a17b3723fc593290} 
+\index{wator.cpp@{wator.cpp}!numThreads@{numThreads}}
+\index{numThreads@{numThreads}!wator.cpp@{wator.cpp}}
+\doxysubsubsection{\texorpdfstring{numThreads}{numThreads}}
+{\footnotesize\ttfamily int num\+Threads = 0}
+
+\Hypertarget{wator_8cpp_acfa1ffb83cff16315eb121d989884b43}\label{wator_8cpp_acfa1ffb83cff16315eb121d989884b43} 
+\index{wator.cpp@{wator.cpp}!sharkBreed@{sharkBreed}}
+\index{sharkBreed@{sharkBreed}!wator.cpp@{wator.cpp}}
+\doxysubsubsection{\texorpdfstring{sharkBreed}{sharkBreed}}
+{\footnotesize\ttfamily const int shark\+Breed = 6}
+
+\Hypertarget{wator_8cpp_a67566e510211a1016413cd84bdf23969}\label{wator_8cpp_a67566e510211a1016413cd84bdf23969} 
+\index{wator.cpp@{wator.cpp}!starve@{starve}}
+\index{starve@{starve}!wator.cpp@{wator.cpp}}
+\doxysubsubsection{\texorpdfstring{starve}{starve}}
+{\footnotesize\ttfamily const int starve = 2}
+
+\Hypertarget{wator_8cpp_a51065be64dea192cc1697e42303f3f08}\label{wator_8cpp_a51065be64dea192cc1697e42303f3f08} 
+\index{wator.cpp@{wator.cpp}!tiles@{tiles}}
+\index{tiles@{tiles}!wator.cpp@{wator.cpp}}
+\doxysubsubsection{\texorpdfstring{tiles}{tiles}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_tile}{Tile}} tiles\mbox{[}\mbox{\hyperlink{wator_8cpp_aea75dd10e09d2d3eb69ed47e48cf81dc}{xdim}}\mbox{]}\mbox{[}\mbox{\hyperlink{wator_8cpp_ae4edf59451b5b93478325e260849c564}{ydim}}\mbox{]}}
+
+\Hypertarget{wator_8cpp_a527273df9431813326e9ff8e2784bb8a}\label{wator_8cpp_a527273df9431813326e9ff8e2784bb8a} 
+\index{wator.cpp@{wator.cpp}!tileXSize@{tileXSize}}
+\index{tileXSize@{tileXSize}!wator.cpp@{wator.cpp}}
+\doxysubsubsection{\texorpdfstring{tileXSize}{tileXSize}}
+{\footnotesize\ttfamily const int tile\+XSize = \mbox{\hyperlink{wator_8cpp_ac7ab5ee55dcd44ef05c33e2c710137f3}{Window\+XSize}} / \mbox{\hyperlink{wator_8cpp_aea75dd10e09d2d3eb69ed47e48cf81dc}{xdim}}}
+
+\Hypertarget{wator_8cpp_a34a2e5c6c2d2e1e2e3baf4bc5e0e0c77}\label{wator_8cpp_a34a2e5c6c2d2e1e2e3baf4bc5e0e0c77} 
+\index{wator.cpp@{wator.cpp}!tileYSize@{tileYSize}}
+\index{tileYSize@{tileYSize}!wator.cpp@{wator.cpp}}
+\doxysubsubsection{\texorpdfstring{tileYSize}{tileYSize}}
+{\footnotesize\ttfamily const int tile\+YSize = \mbox{\hyperlink{wator_8cpp_accf8a62be256e8e1d7f915d79e218e6f}{Window\+YSize}} / \mbox{\hyperlink{wator_8cpp_ae4edf59451b5b93478325e260849c564}{ydim}}}
+
+\Hypertarget{wator_8cpp_ac7ab5ee55dcd44ef05c33e2c710137f3}\label{wator_8cpp_ac7ab5ee55dcd44ef05c33e2c710137f3} 
+\index{wator.cpp@{wator.cpp}!WindowXSize@{WindowXSize}}
+\index{WindowXSize@{WindowXSize}!wator.cpp@{wator.cpp}}
+\doxysubsubsection{\texorpdfstring{WindowXSize}{WindowXSize}}
+{\footnotesize\ttfamily const int Window\+XSize = 1000}
+
+\Hypertarget{wator_8cpp_accf8a62be256e8e1d7f915d79e218e6f}\label{wator_8cpp_accf8a62be256e8e1d7f915d79e218e6f} 
+\index{wator.cpp@{wator.cpp}!WindowYSize@{WindowYSize}}
+\index{WindowYSize@{WindowYSize}!wator.cpp@{wator.cpp}}
+\doxysubsubsection{\texorpdfstring{WindowYSize}{WindowYSize}}
+{\footnotesize\ttfamily const int Window\+YSize = 800}
+
+\Hypertarget{wator_8cpp_aea75dd10e09d2d3eb69ed47e48cf81dc}\label{wator_8cpp_aea75dd10e09d2d3eb69ed47e48cf81dc} 
+\index{wator.cpp@{wator.cpp}!xdim@{xdim}}
+\index{xdim@{xdim}!wator.cpp@{wator.cpp}}
+\doxysubsubsection{\texorpdfstring{xdim}{xdim}}
+{\footnotesize\ttfamily const int xdim = 800}
+
+\Hypertarget{wator_8cpp_ae4edf59451b5b93478325e260849c564}\label{wator_8cpp_ae4edf59451b5b93478325e260849c564} 
+\index{wator.cpp@{wator.cpp}!ydim@{ydim}}
+\index{ydim@{ydim}!wator.cpp@{wator.cpp}}
+\doxysubsubsection{\texorpdfstring{ydim}{ydim}}
+{\footnotesize\ttfamily const int ydim = 800}
+
